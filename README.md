@@ -8,6 +8,4 @@ Install
 -------
 
       git submodule update --init
-      cp config.dist.php config.php
 
-Edit config.php and your're good to go.

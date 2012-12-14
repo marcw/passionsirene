@@ -1,9 +1,8 @@
 <?php
 
-require_once __DIR__.'/config.php';
 require_once __DIR__.'/vendor/twitteroauth/twitteroauth/twitteroauth.php';
 
-$connection = new TwitterOAuth(CONSUMER_KEY, CONSUMER_SECRET, ACCESS_TOKEN, ACCESS_TOKEN_SECRET);
+$connection = new TwitterOAuth(getenv('CONSUMER_KEY'), getenv('CONSUMER_SECRET'), getenv('ACCESS_TOKEN'), getenv('ACCESS_TOKEN_SECRET'));
 
 $original = function() {
     $ahu  = str_repeat('A', rand(1, 15));
