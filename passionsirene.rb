@@ -13,6 +13,9 @@ r = Random.new
 
 original = "A" * r.rand(1..15)
 original += "H" * r.rand(4..15)
+if r.rand(0..60) == 10
+    original += "hipse"
+end
 original += "U" * r.rand(10..35)
 
 
