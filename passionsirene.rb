@@ -29,12 +29,22 @@ def chunk(string, size)
     string.scan(/.{1,#{size}}/)
 end
 
+colors = [
+    ["#fffd2f", "#000000"],
+    ["#0036ff", "#ffffff"],
+    ["#00ff32", "#ffffff"],
+    ["#f800ef", "#ffffff"],
+    ["#000000", "#ffffff"],
+]
+
+color = colors.sample
+
 pointsize = 80
-canvas = Magick::Image.new(435, 225) {self.background_color = '#f800ef'}
+canvas = Magick::Image.new(435, 225) {self.background_color = color[0]}
 gc = Magick::Draw.new
 gc.font = 'impact.ttf'
-gc.fill = '#ffffff'
-gc.stroke = 'white'
+gc.fill = color[1]
+gc.stroke = color[1]
 gc.text_antialias=true
 gc.pointsize(pointsize)
 
