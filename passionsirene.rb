@@ -30,7 +30,7 @@ def chunk(string, size)
 end
 
 pointsize = 80
-canvas = Magick::Image.new(435, 225) {self.background_color = 'black'}
+canvas = Magick::Image.new(435, 225) {self.background_color = '#f800ef'}
 gc = Magick::Draw.new
 gc.font = 'impact.ttf'
 gc.fill = '#ffffff'
@@ -51,5 +51,3 @@ end
 canvas.write('tst.png')
 Twitter.update_with_media(original, File.new('tst.png'))
 File.delete('tst.png')
-
-#Twitter.update(original)
